@@ -1,0 +1,21 @@
+-   repo: git://github.com/pre-commit/pre-commit-hooks
+    sha: v1.1.1
+    commit_stage: [commit]
+    hooks:
+    -   id: trailing-whitespace
+    -   id: check-ast
+    -   id: check-case-conflict
+    -   id: check-merge-conflict
+    -   id: check-symlinks
+    -   id: debug-statements
+    -   id: detect-private-key
+    -   id: double-quote-string-fixer
+    -   id: end-of-file-fixer
+-   repo: local
+    hooks:
+    -   id: check-tests
+        name: ChkTex Tests
+        entry: make test
+        stages: [commit, push]
+        language: system
+        files: \.tex$
